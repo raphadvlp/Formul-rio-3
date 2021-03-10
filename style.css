@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* RESETANDO AS PROPRIEDADES PADRÕES */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+}
+
+/* DEFINIÇÕES DO FUNDO */
+body {
+    /*background: linear-gradient(45deg, #8e2de2, #4a00e0);*/
+    background-image: url(img/fundo.jpg);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+}
+
+/* DEFINIÇÕES DA CAIXA DO FORMULÁRIO*/
+main.container {
+    background: linear-gradient(to bottom right,#4d4d4d, #8c8c8c);
+    min-width: 350px;
+    min-height: 40vh;
+    padding: 2rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+main img {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+/* DEFINIÇÕES DO ESTILO DO TITOLO LOGIN */
+main h2 {
+    font-weight: 600;
+    margin-bottom: 2rem;
+    position: relative;
+    font-size: 40px;
+    text-align: center;
+}
+
+/* COLOCANDO O TRACINHO EM BAIXO DO TITULO LOGIN*/
+main h2::before {
+    content:' ';
+    position: absolute;
+    height: 4px;
+    width: 25px;
+    bottom: 3px;
+    left: 5;
+    border-radius: 8px;
+    background:  linear-gradient(45deg, #f50000 30%, #ffffff 100%);
+}
+
+/* DEFININDO AS PROPRIEDADES DO FORUMULARIO */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* COLOCANDO OS CAMPOS INPUTS RELATIVOS AO FORMULÁRIO */
+.input-field {
+    position: relative;
+}
+
+/* DANDO UM ESPAÇAMENTO APENAS NO PRIMEIRO INPUT */
+form .input-field:first-child {
+    margin-bottom: 1.5rem;
+}
+
+/* COLOCANDO A LINHA QUE APARECE EM BAIXO DO INPUT */
+.input-field .underline::before {
+    content: ' ';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: rgba(218, 4, 4, 0.2);
+}
+
+/* COLOCANDO O EFEITO DA LINHA APARECENDO EM BAIXO AO CLICAR*/
+.input-field .underline::after {
+    content: ' ';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background:  linear-gradient(45deg, #FFFFFF, #f50000);
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+    transform-origin: left; /* INDICA O PONTO DE INICIO DO TRANSFORM */
+}
+
+/* PEGA O ELEMENTO AFTER DE CIMA */
+.input-field input:focus ~ .underline::after{
+    transform: scaleX(1);
+}
+
+/* COLOCANDO PRIPIEDADE DENTRO DO CAMPO INPUT */
+.input-field input {
+    outline: none;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.7);
+    background: none;
+}
+
+/* DECORANDO O PLACEHOLDER */
+.input-field input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* DEFININDO AS PROPRIEDADES DE DECORAÇÃO DO BOTÃO CONTINUE*/
+form input[type="submit"] {
+    margin-top: 2rem;
+    padding: 0.4rem;
+    background: linear-gradient(to left,  #0d0d0d, #4d4d4d);
+    cursor: pointer;
+    color: #FFF;
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: cubic-bezier(0.23, 1, 0.320, 1)all 0.3s ease;
+}
+
+/* COLOCANDO EFEITO AO PASSAR O MOUSE EM CIMA DO BOTÃO CONTINUE*/
+form input[type="submit"]:hover {
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #0d0d0d, #4d4d4d);
+}
+
+/* DEFININDO POSICIONAMENTO DO SPAN E DOS BOTÕES DAS REDES SOCIAIS */
+.footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+/* DEFININDO COR, TAMANHO E ALINHAMENTO DO TEXTO DO SPAN*/
+.footer span {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* DIFNINDO ESPAÇAMENTO, BORDA, TAMANHO E FONTE DOS BOTÕES SOCIAIS */
+.footer .social-field {
+    padding: 0.4rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* DANDO MARGIN NO ICONE DAS REDES, PARA ALINHAR OS TEXTOS */
+.footer .social-field a i {
+    margin: 0 0.5rem;
+    width: 15px;
+}
+
+/* RETIRANDO A DECORAÇÃO PADRÃO DO LINK DOS TEXTOS DAS REDES*/
+.footer .social-field a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+/* DEFININDO COR DE FUNDO DOS BOTÕES DA REDE TWITTER */
+.footer .social-field.instagram {
+    background: linear-gradient(to bottom right, #feda75 0%, #4f5bd5 100%);
+}
+
+/* DEFININDO COR DE FUNDO DOS BOTÕES DA REDE FACEBOOK */
+.footer .social-field.facebook {
+    background: linear-gradient(to bottom right, #605bff 0%, #ff6968 100%);
+}
+
+.footer a:hover {
+    letter-spacing: 2px;
+}
+
+.footer p,
+.footer .ciar-conta {
+    font-family: 'Poppins';
+    font-size: 12px;
+}
+.footer p {
+    margin-top: 15px;
+}
